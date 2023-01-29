@@ -13,7 +13,7 @@ const query = groq`
 
 
 `;
-export const revalidate = 30;
+// export const revalidate = 30;
 
 async function page() {
   if (previewData()) {
