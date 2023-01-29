@@ -4,6 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import { myTheme } from './theme'
 import StudioNavbar from './components/StudioNavbar'
+import { getDefaultDocumentNode } from './structure'
 
 export default defineConfig({
   basePath:"/studio",
@@ -13,7 +14,9 @@ export default defineConfig({
   projectId:"1j6yn8b7",
   dataset:"production",
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool({
+    defaultDocumentNode: getDefaultDocumentNode
+  }), visionTool()],
 
   schema: {
     types: schemaTypes,
